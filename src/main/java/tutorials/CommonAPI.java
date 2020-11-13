@@ -1,7 +1,6 @@
-package common;
+package tutorials;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.omg.PortableServer.THREAD_POLICY_ID;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;

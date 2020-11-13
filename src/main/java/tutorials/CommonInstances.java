@@ -1,4 +1,4 @@
-package common;
+package tutorials;
 
 public class CommonInstances {
 
