@@ -3,12 +3,7 @@ package tutorials;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -24,7 +19,6 @@ public class CommonAPI {
     public static WebDriver driver;
     public static Iterator it;
     public static JavascriptExecutor javascriptExecutor;
-    public static Select select;
     public static Actions actions;
     public static SoftAssert softAssert;
 
@@ -36,14 +30,6 @@ public class CommonAPI {
             javascriptExecutor = (JavascriptExecutor)driver;
             actions = new Actions(driver);
             softAssert = new SoftAssert();
-            step2initialize(driver);
-        } else if (lowerCaseBrowserType.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-            step2initialize(driver);
-        } else if (lowerCaseBrowserType.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
             step2initialize(driver);
         }
         return driver;
@@ -63,12 +49,7 @@ public class CommonAPI {
         javascriptExecutor.executeScript("arguments[0].scrollIntoView(true)", element);
         sleep(1000);
     }
-    /*Select dropdown action using Select*/
-    public void selectDropDownAction(WebElement element, String enterValue)
-    {
-        select = new Select(element);
-        select.selectByVisibleText(enterValue);
-    }
+
 
     /*Select dropdown using withoutSelect*/
 
